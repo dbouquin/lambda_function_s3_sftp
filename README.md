@@ -1,3 +1,6 @@
+# An Ordeal 
+Written and directed by Daina Bouquin
+
 ## SSH key conversion from OpenSSH to RSA:
 - Run: `ssh-keygen -p -m PEM -f ~/.ssh/id_rsa`
 	- You will be prompted to enter a passphrase (twice) - leave it blank
@@ -33,9 +36,9 @@
 
 ## Docker setup
 - Install Docker: [https://docs.docker.com/desktop/install/mac-install/](https://docs.docker.com/desktop/install/mac-install/)
-- Create Dockerfile (no extension)
-- Create requirements.txt
-- Put Dockerfile and requirements.txt in directory with lambda_function.py
+- Create [Dockerfile](https://github.com/dbouquin/lambda_function_s3_sftp/blob/main/Dockerfile) (no extension)
+- Create [requirements.txt](https://github.com/dbouquin/lambda_function_s3_sftp/blob/main/requirements.txt)
+- Put Dockerfile and requirements.txt in directory with [lambda_function.py](https://github.com/dbouquin/lambda_function_s3_sftp/blob/main/lambda_function.py)
 
 ## Create a container repository on AWS Elastic Container Registry (ECR) 
 - Name the repository "s3-to-sftp"
