@@ -132,7 +132,7 @@ LIST @my_s3_stage/;
 
 ## Confirm that the test worked
 - Check the S3 bucket to make sure the file was uploaded
-- Check the "Monitor" on the s3-to-sftp lambda function
+- Check the "Monitor" > "View CloudWatch logs" on the s3-to-sftp lambda function
 	- Click the "LogStream" for the most recent run
 	- View results in CloudWatch (there should be no errors)
 - Run the following python script (`show_files_on_roi_sftp.py`) to list the files on the SFTP server (there should now be one named `filename.zip`)
