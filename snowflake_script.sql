@@ -53,6 +53,7 @@ CREATE OR REPLACE STAGE my_s3_stage
 COPY INTO @my_s3_stage/raw_roi_export
 FROM WEALTH_SCREENING.public.RAW_ROI_EXPORT
 FILE_FORMAT = (TYPE = 'CSV', FIELD_OPTIONALLY_ENCLOSED_BY = '"')
+HEADER = TRUE
 OVERWRITE = TRUE; 
 
 -- List the files in the stage to confirm
