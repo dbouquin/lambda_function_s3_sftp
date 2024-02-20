@@ -135,7 +135,7 @@ LIST @my_s3_stage/;
 - Check the "Monitor" on the s3-to-sftp lambda function
 	- Click the "LogStream" for the most recent run
 	- View results in CloudWatch (there should be no errors)
-- Run the following python script to list the files on the SFTP server (there should now be one named `filename.zip`)
+- Run the following python script (`show_files_on_roi_sftp.py`) to list the files on the SFTP server (there should now be one named `filename.zip`)
 	- `ssh_test.txt` contains the AWS secret as "Plaintext" that you can copy from the Secrets Manager (it's a json object) 
 ```
 import paramiko
@@ -153,7 +153,7 @@ client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 #%%
 # Read the SSH key from the ssh_test.txt file and parse it as JSON
-with open('ssh_test.txt', 'r') as f:
+with open('/Users/dbouquin/Library/CloudStorage/OneDrive-NationalParksConservationAssociation/Documents_Daina/Analysis/SFTP/ssh_test.txt', 'r') as f:
     secret = json.load(f)
 
 #%%
