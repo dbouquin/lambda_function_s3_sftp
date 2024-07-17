@@ -1,6 +1,5 @@
 import paramiko
-import json
-import io
+import os
 
 #%%
 # Initialize the SSH client
@@ -12,13 +11,10 @@ client.load_system_host_keys()
 client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 #%%
-# Read the SSH key from the ssh_test.txt file and parse it as JSON
-with open('/Users/dbouquin/Library/CloudStorage/OneDrive-NationalParksConservationAssociation/Documents_Daina/Analysis/SFTP/ssh_test.txt', 'r') as f:
-    secret = json.load(f)
+# connect to the SFTP server
+ssh_key_filepath = os.path.expanduser('~/.ssh/id_rsa_roi')
+my_ssh_key = paramiko.RSAKey(filename=ssh_key_filepath)
 
-#%%
-# Create a file-like object from the SSH key string
-my_ssh_key = paramiko.RSAKey(file_obj=io.StringIO(secret['SSH_KEY']))
 
 #%%
 # Connect to the SFTP server
